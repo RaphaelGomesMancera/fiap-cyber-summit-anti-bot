@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Global Cyber Summit - Anti-Bot</title>
+    <style>
+        body { background-color: #121212; color: #00e5ff; font-family: sans-serif; display: flex; justify-content: center; padding: 50px; }
+        .card { background: #1a1a1a; border: 1px solid #333; border-radius: 15px; padding: 30px; width: 500px; box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
+        h1 { color: #fff; border-left: 5px solid #00e5ff; padding-left: 10px; }
+        .btn { background: #00e5ff; border: none; padding: 15px; width: 100%; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { background: #00b8d4; transform: scale(1.02); }
+        #status { margin-top: 20px; color: #aaa; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Global Cyber Summit</h1>
+        <p>Proteção contra Inscrições Fraudulentas</p>
+        <hr style="border: 0.5px solid #333;">
+        <label>ID DO EVENTO ALVO:</label><br>
+        <input type="text" placeholder="Ex: 1" style="width: 100%; background: #222; border: 1px solid #444; color: white; padding: 10px; margin-top: 10px;">
+        
+        <button class="btn" onclick="iniciarVarredura()">INICIAR VARREDURA ANTI-BOT</button>
+        
+        <div id="status"></div>
+    </div>
+
+    <script>
+        function iniciarVarredura() {
+            const status = document.getElementById('status');
+            status.innerHTML = "🔍 Varrendo banco de dados...";
+            setTimeout(() => {
+                status.innerHTML = "✅ Sucesso! 3 registros fraudulentos identificados e punidos no log de auditoria.";
+                alert("Varredura concluída! Trust Score reduzido em 15 pontos para bots.");
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
